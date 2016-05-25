@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'AudiType Normal', Times-Roman;
+  font-family: 'AudiType Light', Times-Roman;
   font-size: 12px;
   background: white;
 }
@@ -50,6 +50,8 @@ body {
   background: black;
   font: white 8px;
   margin-top: 0;
+  font-family: 'AudiType Normal', Times-Roman;
+
 }
 
 #navigator a {
@@ -84,6 +86,29 @@ h1 {
   margin-top: 3em;
 }
 
+table {
+  margin-top: 3em;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0.2em;
+}
+
+th {
+  background: #282c34;
+  color: white;
+}
+
+th, td {
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: left;
+}
+
+tr {
+  height: 2.5em;
+  line-height: 2.5em;
+}
+
 .flex-container {
     width: 100%;
     float: left;
@@ -101,8 +126,7 @@ h1 {
     //border: dashed 1px #484847;
     border-radius: 0.2em;
     margin-top: 10px;
-    padding-left: 1em;
-    padding-right: 1em;
+
     height: 3em;
     line-height: 3em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

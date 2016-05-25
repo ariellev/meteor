@@ -1,12 +1,35 @@
 <template name="users" >
   <h1>Users</h1>
-  <div class="flex-container">
+  <div>
+    <table class="table" cellspacing="0">
+       <thead>
+         <tr>
+           <th>Id</th>
+           <th>Name</th>
+           <th>Email</th>
+           <th>Birthday</th>
+         </tr>
+       </thead>
+       <tbody>
   {{#each userList}} {{> user}} {{/each}}
-  </div>
+</tbody>
+</table>
+</div>
 </template>
 
 <template name="user">
-    <div class="flex-item">
-        {{id}} | {{firstName}} {{lastName}} | {{email}} | {{formatTime birthday}}
-    </div>
+    <tr>
+        <td>
+          {{id}}
+        </td>
+        <td>
+          {{firstName}} {{lastName}}
+        </td>
+        <td>
+          {{email}}
+        </td>
+        <td>
+           {{formatTime birthday}}
+        </td>
+    </tr>
 </template>
