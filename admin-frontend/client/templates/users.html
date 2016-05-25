@@ -1,11 +1,18 @@
 <template name="users" >
   <h1>Users</h1>
+  <div class="actionBar">
+      <a href="/create-user" class="createNewPost">create</a>
+      <a href="/search-user" class="createNewPost">search</a>      
+      <a href="/prev-user" class="createNewPost">previous</a>
+      <a href="/next-user" class="createNewPost">next</a>
+  </div>
   <div>
     <table class="table" cellspacing="0">
        <thead>
          <tr>
            <th>Id</th>
-           <th>Name</th>
+           <th>First name</th>
+           <th>Last name</th>
            <th>Email</th>
            <th>Birthday</th>
          </tr>
@@ -23,13 +30,16 @@
           {{id}}
         </td>
         <td>
-          {{firstName}} {{lastName}}
+          <input type="text" name="firstName" value="{{firstName}}">
         </td>
         <td>
-          {{email}}
+        <input type="text" name="lastName" value="{{lastName}}">
         </td>
         <td>
-           {{formatTime birthday}}
+          <input type="text" name="email" value="{{email}}">
+        </td>
+        <td>
+          <input type="text" name="birthday" value="{{formatTime birthday}}">
         </td>
     </tr>
 </template>
