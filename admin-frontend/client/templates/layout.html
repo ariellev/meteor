@@ -1,0 +1,35 @@
+<head>
+<title>Console</title>
+</head>
+
+<template name="layout">
+	<header>
+		<div id="top" class="wrapper">
+			<h3>Admin Console</h3>
+		</div>
+		<div id="stage">
+			<img src="/images/stage.jpg" width="100%" border="0">
+		</div>
+		<div id="navigator" class="wrapper">
+			<a href="/">vehicles</a>
+			<a href="/users">users</a>
+		</div>
+	</header>
+
+	<main id="main" class="wrapper">
+		{{> yield}}
+	</main>
+</template>
+
+<template name="notFound">
+	<div>
+		<h1>Nothing here</h1><br>
+		<h2>You hit a page which doesn't exist!</h2>
+	</div>
+</template>
+
+<template name="loading">
+	<div>
+		<h1>Loading content</h1><br>
+	</div>
+</template>

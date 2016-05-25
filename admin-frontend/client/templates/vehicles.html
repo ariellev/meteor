@@ -1,0 +1,12 @@
+<template name="vehicles" >
+  <h1>Vehicles</h1>
+  <div class="flex-container">
+  {{#each vehicleList}} {{> vehicle}} {{/each}}
+  </div>
+</template>
+
+<template name="vehicle">
+    <div class="flex-item">
+        {{id}} | {{vin}} | {{licensePlate}} | {{model}} | {{active}} | {{color}} | {{formatTime validTill "fromNow"}}
+    </div>
+</template>
