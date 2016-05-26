@@ -1,0 +1,43 @@
+<template name="insertVehicle">
+
+        <form class="form-wrapper">
+          <h1 style="margin-bottom: 3em">Insert vehicle</h1>
+            <div class="form-input-div">
+              <div class="label">License plate</div>
+              <input type="text" name="licensePlate" value="{{licensePlate}}" placeholder="e.g IN-1234"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">vin</div>
+              <input type="text" name="vin" value="{{vin}}" placeholder="e.g 1234-4321"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">Model</div>
+              <input type="text" name="model" value="{{model}}" placeholder="e.g Q3"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">Active</div>
+              <input type="text" name="active" value="{{active}}" placeholder="e.g True"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">Color</div>
+              <input type="text" name="color" value="{{color}}"  placeholder="e.g Black"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">Expiration</div>
+              <input type="date" name="validTill" value="{{validTill}}"/>
+            </div>
+
+            <div class="form-input-div" style="margin-top: 8em">
+              <div class="center-wrapper" style="margin-left: 100px; ">
+                <button type="submit" style="margin-right: 30px">{{saveButtonText}}</button>
+                <button type="button" onClick="location.href='/users'">Cancel</button>
+              </div>
+            </div>
+
+        </form>
+</template>

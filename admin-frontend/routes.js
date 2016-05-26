@@ -26,9 +26,14 @@ Router.map(function() {
     subscriptions: () => { Meteor.subscribe('lazy-users', Session.get('total')) }
   });
 
-  this.route('Create User', {
-    path: '/create-user',
-    template: 'createUser'
+  this.route('Insert User', {
+    path: '/insert-user',
+    template: 'insertUser'
+  });
+
+  this.route('Insert Vehicle', {
+    path: '/insert-vehicle',
+    template: 'insertVehicle'
   });
 
 });
