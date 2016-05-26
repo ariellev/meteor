@@ -25,6 +25,12 @@ Router.map(function() {
     template: 'users',
     subscriptions: () => { Meteor.subscribe('lazy-users', Session.get('total')) }
   });
+
+  this.route('Create User', {
+    path: '/create-user',
+    template: 'createUser'
+  });
+
 });
 
 

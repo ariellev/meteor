@@ -1,0 +1,32 @@
+<template name="createUser">
+        <form class="form-wrapper">
+          <h1 style="margin-bottom: 3em">Create new user</h1>
+            <div class="form-input-div">
+              <div class="label">First name</div>
+              <input type="text" name="firstName" value="{{firstName}}" placeholder="e.g Frank"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">Last name</div>
+              <input type="text" name="lastName" value="{{lastName}}" placeholder="e.g Underwood"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">Email</div>
+              <input type="text" name="email" value="{{email}}" placeholder="e.g frank.underwood@wh.gov"/>
+            </div>
+
+            <div class="form-input-div">
+              <div class="label">Birthday</div>
+              <input type="date" name="birthday" value="{{formatTime birthday}}"/>
+            </div>
+
+            <div class="form-input-div" style="margin-top: 8em">
+              <div class="center-wrapper" style="margin-left: 100px; ">
+                <button type="submit" style="margin-right: 30px">{{saveButtonText}}</button>
+                <button type="button" onClick="location.href='/users'">Cancel</button>
+              </div>
+            </div>
+
+        </form>
+</template>
