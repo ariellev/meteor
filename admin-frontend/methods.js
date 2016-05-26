@@ -23,6 +23,10 @@ Meteor.methods({
             var max = _.max(ids) + 1;
             vehicleDocument.id = max;
             Vehicles.insert(vehicleDocument);
+
+            // posting to backend
+            var payload = {data: vehicleDocument};
+            Meteor.http.call("PUT", "http://localhost:8080/api/v1/vehicles/save", payload, (e,d) => console.log(d));
             return vehicleDocument.id;
         }
     }

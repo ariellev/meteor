@@ -79,6 +79,7 @@ h3, .label, button {
 }
 
 .form-input-div div{
+  padding-left: 0.5em;
   margin-bottom: 0.5em;
 }
 
@@ -115,6 +116,13 @@ h1 {
   margin-top: 3em;
   margin-bottom: 0.5em;
   float: right;
+}
+
+#searchInput {
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 
 table {

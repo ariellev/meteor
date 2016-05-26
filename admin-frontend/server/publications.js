@@ -1,3 +1,4 @@
+
 Meteor.publish('all-vehicles', function() {
   return Vehicles.find();
 });
@@ -5,6 +6,12 @@ Meteor.publish('all-vehicles', function() {
 Meteor.publish('all-users', function() {
   return Users.find();
 });
+
+
+Meteor.publish('search-users', function(query, limit) {
+  return Users.find({$or: [{"firstName" : {$regex: query}}, {"lastName" : {$regex: query}}]}, {'limit': limit});
+});
+
 
 Meteor.publish('lazy-vehicles', function(limit) {
   return Vehicles.find({}, {

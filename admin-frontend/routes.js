@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
   Session.setDefault('total', 10);
+  Session.setDefault('query', "");
 };
 
 Router.configure({
@@ -23,7 +24,7 @@ Router.map(function() {
   this.route('Users', {
     path: '/users',
     template: 'users',
-    subscriptions: () => { Meteor.subscribe('lazy-users', Session.get('total')) }
+    subscriptions: () => { Meteor.subscribe('search-users', Session.get('query'), Session.get('total')) }
   });
 
   this.route('Insert User', {

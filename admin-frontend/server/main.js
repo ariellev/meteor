@@ -1,3 +1,7 @@
+
+// syncTimer = new ReactiveTimer();
+// syncTimer.start(1);
+
 Meteor.startup(() => {
     // code to run on server at startup
     console.log("server started");
