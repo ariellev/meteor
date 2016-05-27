@@ -5,8 +5,8 @@ Meteor.methods({
             Session.set('saveButton', 'Saving...');
         } else {
             var ids = Users.find({}, { id: 1}).fetch().map( (u) => u.id);
-            console.log("ids=" + ids);
-            var max = _.max(ids) + 1;
+            console.log("users, current ids=" + ids);
+            var max = ids.length > 0 ? _.max(ids) + 1 : 1;
             userDocument.id = max;
             Users.insert(userDocument);
 
@@ -23,8 +23,8 @@ Meteor.methods({
             Session.set('saveButton', 'Saving...');
         } else {
             var ids = Vehicles.find({}, { id: 1}).fetch().map( (u) => u.id);
-            console.log("ids=" + ids);
-            var max = _.max(ids) + 1;
+            console.log("vehicles, current ids=" + ids);
+            var max = ids.length > 0 ? _.max(ids) + 1 : 1;
             vehicleDocument.id = max;
             Vehicles.insert(vehicleDocument);
 

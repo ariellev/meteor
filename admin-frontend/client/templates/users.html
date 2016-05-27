@@ -13,10 +13,22 @@
          </tr>
        </thead>
        <tbody>
-  {{#each userList}} {{> user}} {{/each}}
+    {{#each userList}}
+      {{> user}}
+      {{else}}
+      {{> noTableData}}
+    {{/each}}
 </tbody>
 </table>
 </div>
+</template>
+
+<template name="noTableData">
+  <tr>
+    <td>
+      No Data
+    </td>
+  </tr>
 </template>
 
 <template name="user">
