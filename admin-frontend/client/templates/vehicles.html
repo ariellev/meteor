@@ -1,11 +1,6 @@
 <template name="vehicles" >
   <h1>Vehicles</h1>
-  <div class="actionBar">
-      <a href="/insert-vehicle">insert</a>
-      <a href="/search-vehicle">search</a>
-      <a href="/prev-vehicle">previous</a>
-      <a href="/next-vehicle">next</a>
-  </div>
+  {{> actionBar context}}
   <div>
     <table class="table" cellspacing="0">
        <thead>

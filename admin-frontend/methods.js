@@ -9,6 +9,10 @@ Meteor.methods({
             var max = _.max(ids) + 1;
             userDocument.id = max;
             Users.insert(userDocument);
+
+            // posting to backend
+            var payload = {data: userDocument};
+            Meteor.http.call("PUT", "http://localhost:8080/api/v1/users/save", payload, (e,d) => console.log(d));
             return userDocument.id;
         }
     },

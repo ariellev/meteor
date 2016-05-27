@@ -27,21 +27,29 @@ body {
   margin: 0 auto;
 }
 
-#menu {
-  position : relative;
-  display: inline-block;
-}
-
-#top {
+#header-container {
   height: 100px;
-  line-height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#stage {
-  width: 100%;
-  height: auto;
-  border: 0;
-  background-color: black;
+.flex-item {
+    border: dashed 1px #484847;
+    border-radius: 0.2em;
+
+    height: 3em;
+    line-height: 3em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#title {
+  width: 15em;
+}
+
+#logo {
+  width: 93px;
 }
 
 #navigator {
@@ -49,8 +57,7 @@ body {
   height: 30px;
   line-height: 30px;
   background: black;
-  font: white 8px;
-  margin-top: 0;
+  font: white 0.6em;
   font-family: 'AudiType Normal', Times-Roman;
 }
 
@@ -65,7 +72,7 @@ a:visited {
 }
 
 a:hover {
-  color: red;
+  color: #CC0033;
 }
 
 h3, .label, button {
@@ -92,6 +99,7 @@ h3, .label, button {
 
 .form-wrapper {
   width: 500px;
+  border-radius: 0.5em;
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 6em 6em 6em 6em;
@@ -128,19 +136,40 @@ h1 {
 table {
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 0.2em;
+  border-radius: 0.5em;
+  background: white;
+}
+
+thead {
+  background: #282c34;;
+  color: white;
+}
+
+thead > tr > th:last-child{
+  -moz-border-radius-topright:0.5em;
+  -webkit-border-top-right-radius:0.5em;
+  border-top-right-radius:0.5em
+}
+
+thead > tr > th:first-child{
+  -moz-border-radius-topleft:0.5em;
+  -webkit-border-top-left-radius:0.5em;
+  border-top-left-radius:0.5em
+}
+
+
+
+th, td {
+  padding-right: 1em;
+  text-align: left;
+}
+
+td {
+  padding-left: 1em;
 }
 
 th {
-  background: #282c34;
-  color: white;
-  padding-left: 0.5em;
-}
-
-th, td {
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align: left;
+  padding-left: 1.5em;
 }
 
 tr {
@@ -162,32 +191,8 @@ input:focus {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 20, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.flex-container {
-    width: 100%;
-    float: left;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center;
-    align-items: stretch;
-    border-radius: 0.2em;
-}
-
-.flex-item {
-    //border: dashed 1px #484847;
-    border-radius: 0.2em;
-    margin-top: 10px;
-
-    height: 3em;
-    line-height: 3em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
 button {
-
+border: none;
   background: #282c34;
   color: white;
   padding: 1em 2em 1em 2em;

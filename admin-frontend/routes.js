@@ -18,7 +18,7 @@ Router.map(function() {
   this.route('Vehicles', {
     path: '/',
     template: 'vehicles',
-    subscriptions: () => { Meteor.subscribe('lazy-vehicles', Session.get('total')) }
+    subscriptions: () => { Meteor.subscribe('search-vehicles', Session.get('query'), Session.get('total')) }
   });
 
   this.route('Users', {
@@ -39,37 +39,10 @@ Router.map(function() {
 
 });
 
-
-//   this.route('About', {
-//     path: '/about',
-//     template: 'about'
-//   });
+// var resetSession = function() {
+//   console.log('hook-resetSession');
 //
-//   this.route('Post', {
-//     path: '/posts/:slug',
-//     template: 'post',
-//     controller: 'PostController'
-//   });
-//
-//   this.route('Edit Post', {
-//     path: '/edit-post/:slug',
-//     template: 'editPost',
-//     controller: 'PostController'
-//   });
-//
-//   this.route('Create Post', {
-//     path: '/create-post',
-//     template: 'editPost'
-//   });
-//
-// });
-//
-// var requiresLogin = function() {
-//   if (!Meteor.user() || !Meteor.user().roles || !Meteor.user().roles.admin) {
-//     this.render('notFound');
-//   } else {
-//     this.next();
-//   }
+//   this.next();
 // };
 //
-// Router.onBeforeAction(requiresLogin, {only: ['Create Post', 'Edit Post']});
+// Router.onBeforeAction(resetSession, {only: ['Vehicles', 'Users']});

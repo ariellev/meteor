@@ -1,17 +1,22 @@
 
 Meteor.publish('all-vehicles', function() {
-  return Vehicles.find();
+  return Vehicles.find({},{sort : {id : 1}});
 });
 
 Meteor.publish('all-users', function() {
   return Users.find();
 });
 
-
-Meteor.publish('search-users', function(query, limit) {
-  return Users.find({$or: [{"firstName" : {$regex: query}}, {"lastName" : {$regex: query}}]}, {'limit': limit});
+Meteor.publish('search-vehicles', function(query, limit) {
+  return Vehicles.find({$or: [{"licensePlate" : {$regex: query}}, {"vin" : {$regex: query}}, {"model" : {$regex: query}}, {"active" : {$regex: query}}, {"color" : {$regex: query}}]}, {limit: limit, sort : {id : 1}});
 });
 
+Meteor.publish('search-users', function(query, limit) {
+  console.log('search-users, called=' + query);
+  var cursor = Users.find({$or: [{"firstName" : {$regex: query}}, {"lastName" : {$regex: query}}]}, {limit: limit, sort : {id : 1}});
+  console.log('search-users, result=' + JSON.stringify(cursor.fetch()));
+  return cursor;
+});
 
 Meteor.publish('lazy-vehicles', function(limit) {
   return Vehicles.find({}, {
