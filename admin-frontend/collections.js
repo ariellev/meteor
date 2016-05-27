@@ -1,6 +1,9 @@
 Vehicles = new Mongo.Collection('vehicles');
 Users = new Mongo.Collection('b-users');
 
+// in secs
+var syncInterval = 15;
+
 syncUsers = function() {
   Meteor.http.call("GET", "http://localhost:8080/api/v1/users", (error, response) => {
       if (!error) {
@@ -42,17 +45,11 @@ syncVehicles = function() {
 if (Meteor.isServer) {
     syncUsers();
     Meteor.setInterval(function() {
-      syncUser();
-    }, 1000 * 60);
+      syncUsers();
+    }, 1000 * syncInterval);
 
     syncVehicles();
     Meteor.setInterval(function() {
       syncVehicles();
-    }, 1000 * 60);
+    }, 1000 * syncInterval);
 }
-
-
-// Users.before.insert(function (userId, doc) {
-//   doc.createdAt = Date.now();
-//   doc.name = doc.firstName + " " + doc.lastName;
-// });

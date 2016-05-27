@@ -52,6 +52,11 @@ body {
   width: 93px;
 }
 
+.wide {
+  margin-left: -1%;
+  width: 101%;
+}
+
 #navigator {
   color: white;
   height: 30px;
