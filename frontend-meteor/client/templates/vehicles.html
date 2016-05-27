@@ -1,0 +1,51 @@
+<template name="vehicles">
+    <h1>Vehicles</h1> {{> actionBar context}}
+    <div>
+        <table class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>vin</th>
+                    <th>License plate</th>
+                    <th>Model</th>
+                    <th>Active</th>
+                    <th>Color</th>
+                    <th>Expiration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each vehicleList}}
+                  {{> vehicle}} 
+                {{else}}
+                  {{> noTableData}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<template name="vehicle">
+    <tr>
+        <td>
+            {{id}}
+        </td>
+        <td>
+            <input type="text" name="vin" value="{{vin}}">
+        </td>
+        <td>
+            <input type="text" name="licensePlate" value="{{licensePlate}}">
+        </td>
+        <td>
+            <input type="text" name="model" value="{{model}}">
+        </td>
+        <td>
+            <input type="text" name="active" value="{{active}}">
+        </td>
+        <td>
+            <input type="text" name="color" value="{{color}}">
+        </td>
+        <td>
+            <input type="text" name="validTill" value="{{formatTime validTill " fromNow "}}">
+        </td>
+    </tr>
+</template>
